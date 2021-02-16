@@ -16,7 +16,9 @@ class Board:
         self.board[1][7] = Pawn(1, 7, "w")
         self.pos_pawn = (0,0)
     def draw(self, screen, color):
-        self.board[0][0].draw(screen, "w")
-    
+        for i in range(len(self.board)):
+            for j in range(len(self.board[i])):
+                if self.board[i][j] != 0:
+                    self.board[i][j].draw(screen, "w")
     def move_piece(self):
         pass

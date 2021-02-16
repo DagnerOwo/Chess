@@ -1,6 +1,6 @@
 import pygame
 from .player import Player
-from constants import WIDTH, HEIGHT
+from constants import WIDTH, HEIGHT, MARGIN_X, MARGIN_Y, BOARD_WIDTH, BOARD_HEIGHT
 import os
 from .board import Board
 class Game:
@@ -12,7 +12,7 @@ class Game:
         
          #chessbg = pygame.image.load(os.path.join("img", "chessbg.png"))
     def update(self):
-        board_img = pygame.transform.scale(pygame.image.load(os.path.join("assets","board.png")), (WIDTH, HEIGHT))
-        self.screen.blit(board_img, (0, 0))
+        board_img = pygame.transform.scale(pygame.image.load(os.path.join("assets","board.png")), (BOARD_WIDTH, BOARD_HEIGHT))
+        self.screen.blit(board_img, (MARGIN_X, MARGIN_Y))
         self.board.draw(self.screen, "w")
         pygame.display.update()
